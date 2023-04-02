@@ -1,12 +1,12 @@
 # To do list Database
 
-##Database diagram
+## Database diagram
 
 ![image](https://user-images.githubusercontent.com/106080433/229336758-b944a712-8d9f-4bec-b552-ce2c3d474c5b.png)
 
-##Database Script
+## Database Script
 
-###Category
+### Category
 
 ```
 CREATE TABLE Category(
@@ -16,7 +16,7 @@ CONSTRAINT PK_Category PRIMARY KEY ("id")
 );
 ```
 
-###Deal
+### Deal
 
 ```
 CREATE TABLE Deal(
@@ -29,7 +29,7 @@ CONSTRAINT PK_Deal PRIMARY KEY ("id")
 );
 ```
 
-###DealCategory
+### DealCategory
 
 ```
 CREATE TABLE DealCategory(
