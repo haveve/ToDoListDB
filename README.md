@@ -2,7 +2,7 @@
 
 ## Database diagram
 
-![image](https://user-images.githubusercontent.com/106080433/229336758-b944a712-8d9f-4bec-b552-ce2c3d474c5b.png)
+![image](https://user-images.githubusercontent.com/106080433/229347150-4737beed-b1f1-4eb8-851d-ed4dada6b7f9.png)
 
 ## Database Script
 
@@ -21,22 +21,12 @@ CONSTRAINT PK_Category PRIMARY KEY ("id")
 ```
 CREATE TABLE Deal(
 "id" INT IDENTITY NOT NULL,
+"id_category" INT NOT NULL,
 "name" VARCHAR(55) NOT NULL,
 "isComplete" BIT DEFAULT 0 NOT NULL,
 "dueDate" DATE,
 "task" VARCHAR(MAX),
+CONSTRAINT FK_DealCategory_CategoryId FOREIGN KEY("id_category") REFERENCES Category("id"),
 CONSTRAINT PK_Deal PRIMARY KEY ("id")
-);
-```
-
-### DealCategory
-
-```
-CREATE TABLE DealCategory(
-"id_deal" INT  NOT NULL,
-"id_category" INT  NOT NULL,
-CONSTRAINT FK_Id_Deal FOREIGN KEY("id_deal") REFERENCES Deal("id") ON DELETE CASCADE,
-CONSTRAINT FK_Id_Category FOREIGN KEY("id_category") REFERENCES Category("id") ON DELETE CASCADE,
-CONSTRAINT PK_Id_DealCategory PRIMARY KEY("id_deal","id_category")
 );
 ```
