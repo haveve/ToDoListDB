@@ -26,7 +26,7 @@ CREATE TABLE Deal(
 "isComplete" BIT DEFAULT 0 NOT NULL,
 "dueDate" DATE,
 "task" VARCHAR(MAX),
-CONSTRAINT FK_DealCategory_CategoryId FOREIGN KEY("id_category") REFERENCES Category("id"),
+CONSTRAINT FK_DealCategory_CategoryId FOREIGN KEY("id_category") REFERENCES Category("id") ON DELETE CASCADE,
 CONSTRAINT PK_Deal PRIMARY KEY ("id")
 );
 ```
