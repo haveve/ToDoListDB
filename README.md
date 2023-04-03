@@ -25,7 +25,6 @@ CREATE TABLE Deal(
 "name" NVARCHAR(55) NOT NULL,
 "isComplete" BIT DEFAULT 0 NOT NULL,
 "dueDate" DATE,
-"task" NVARCHAR(MAX),
 CONSTRAINT FK_DealCategory_CategoryId FOREIGN KEY("id_category") REFERENCES Category("id") ON DELETE CASCADE,
 CONSTRAINT PK_Deal PRIMARY KEY ("id")
 );
